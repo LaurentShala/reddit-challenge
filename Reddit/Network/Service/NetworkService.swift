@@ -19,7 +19,7 @@ final class NetworkService {
     // MARK: Methods
 
     func execute(endpoint: Endpoint, completion: @escaping (Result<Page, NetworkError>) -> Void) {
-        guard let url = URL(string: endpoint.path) else {
+        guard let url = endpoint.url else {
             completion(.failure(.invalidURL))
             return
         }

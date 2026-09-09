@@ -14,8 +14,8 @@ struct Post: Decodable, Equatable {
     /// The title of the post.
     let title: String
 
-    /// The subreddit the post belongs to.
-    let subreddit: String
+    /// The author of the Hacker News story.
+    let author: String
 
     /// The URL the post lives at.
     let url: URL?
@@ -28,20 +28,27 @@ struct Post: Decodable, Equatable {
 
 extension Post {
 
-    enum CodingKeys: String, CodingKey {
-        case data = "data"
-        case title = "title"
-        case subreddit = "subreddit"
-        case url = "url"
+    private enum CodingKeys: String, CodingKey {
+        case title
+        case author
+        case url
+        case objectID
     }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        let data = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
 
-        title = try data.decode(String.self, forKey: .title)
-        subreddit = try data.decode(String.self, forKey: .subreddit)
-        url = try? data.decode(URL.self, forKey: .url)
+        title = try container.decode(String.self, forKey: .title)
+        author = try container.decode(String.self, forKey: .author)
+
+        if let urlString = try container.decodeIfPresent(String.self, forKey: .url),
+           let remoteURL = URL(string: urlString) {
+            url = remoteURL
+        } else if let objectID = try container.decodeIfPresent(String.self, forKey: .objectID) {
+            url = URL(string: "https://news.ycombinator.com/item?id=\(objectID)")
+        } else {
+            url = nil
+        }
     }
 
 }

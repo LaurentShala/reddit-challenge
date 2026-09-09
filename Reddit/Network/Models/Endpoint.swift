@@ -11,11 +11,11 @@ import Foundation
 
 enum Endpoint {
 
-    /// Fetches posts from the home page of reddit.
+    /// Fetches front-page stories from Hacker News.
     case home
 
-    /// Fetches posts from the specific given subreddit.
-    case subreddit(named: String)
+    /// Searches Hacker News stories for the given query.
+    case search(query: String)
 
 }
 
@@ -29,10 +29,21 @@ extension Endpoint {
     var path: String {
         switch self {
         case .home:
-            return "https://www.reddit.com/.json"
-        case .subreddit(let subreddit):
-            return "https://www.reddit.com/r/" + subreddit + "/.json"
+            return "https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=25"
+        case .search(let query):
+            var components = URLComponents(string: "https://hn.algolia.com/api/v1/search")!
+            components.queryItems = [
+                URLQueryItem(name: "query", value: query),
+                URLQueryItem(name: "tags", value: "story"),
+                URLQueryItem(name: "hitsPerPage", value: "25"),
+            ]
+            return components.url?.absoluteString
+                ?? "https://hn.algolia.com/api/v1/search?tags=story&hitsPerPage=25"
         }
+    }
+
+    var url: URL? {
+        URL(string: path)
     }
 
 }
