@@ -1,24 +1,23 @@
 //
 //  Post.swift
-//  CodingChallenge
+//  NetworkKit
 //
-//  Created by Cody Robertson on 5/20/19.
-//  Copyright © 2019 Cody Robertson. All rights reserved.
+//  Copyright © 2026 StockX. All rights reserved.
 //
 
 import Foundation
 
 
-struct Post: Decodable, Equatable {
+public struct Post: Decodable, Equatable {
 
     /// The title of the post.
-    let title: String
+    public let title: String
 
     /// The author of the Hacker News story.
-    let author: String
+    public let author: String
 
     /// The URL the post lives at.
-    let url: URL?
+    public let url: URL?
 
 }
 
@@ -35,7 +34,7 @@ extension Post {
         case objectID
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         title = try container.decode(String.self, forKey: .title)

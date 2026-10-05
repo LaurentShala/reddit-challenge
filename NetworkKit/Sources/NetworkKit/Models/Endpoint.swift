@@ -1,15 +1,14 @@
 //
 //  Endpoints.swift
-//  CodingChallenge
+//  NetworkKit
 //
-//  Created by Cody Robertson on 5/20/19.
-//  Copyright © 2019 Cody Robertson. All rights reserved.
+//  Copyright © 2026 StockX. All rights reserved.
 //
 
 import Foundation
 
 
-enum Endpoint {
+public enum Endpoint {
 
     /// Fetches front-page stories from Hacker News.
     case home
@@ -26,7 +25,7 @@ enum Endpoint {
 extension Endpoint {
 
     /// The path for the specific endpoint.
-    var path: String {
+    public var path: String {
         switch self {
         case .home:
             return "https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=25"
@@ -42,7 +41,7 @@ extension Endpoint {
         }
     }
 
-    var url: URL? {
+    public var url: URL? {
         URL(string: path)
     }
 

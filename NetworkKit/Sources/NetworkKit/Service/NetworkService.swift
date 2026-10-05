@@ -1,14 +1,13 @@
 //
 //  NetworkService.swift
-//  CodingChallenge
+//  NetworkKit
 //
-//  Created by Cody Robertson on 5/20/19.
-//  Copyright © 2019 Cody Robertson. All rights reserved.
+//  Copyright © 2026 StockX. All rights reserved.
 //
 
 import Foundation
 
-final class NetworkService {
+public final class NetworkService {
 
     // MARK: -
     // MARK: Properties
@@ -16,9 +15,14 @@ final class NetworkService {
     private var task: URLSessionDataTask?
 
     // MARK: -
+    // MARK: Initialization
+
+    public init() {}
+
+    // MARK: -
     // MARK: Methods
 
-    func execute(endpoint: Endpoint, completion: @escaping (Result<Page, NetworkError>) -> Void) {
+    public func execute(endpoint: Endpoint, completion: @escaping (Result<Page, NetworkError>) -> Void) {
         guard let url = endpoint.url else {
             completion(.failure(.invalidURL))
             return
@@ -42,7 +46,7 @@ final class NetworkService {
         task?.resume()
     }
     
-    func execute(endpoint: Endpoint) async throws -> Page {
+    public func execute(endpoint: Endpoint) async throws -> Page {
         return try await withCheckedThrowingContinuation { continuation in
             execute(endpoint: endpoint) { result in
                 switch result {

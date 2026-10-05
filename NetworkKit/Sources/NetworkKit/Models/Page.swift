@@ -1,18 +1,17 @@
 //
 //  Page.swift
-//  CodingChallenge
+//  NetworkKit
 //
-//  Created by Cody Robertson on 5/20/19.
-//  Copyright © 2019 Cody Robertson. All rights reserved.
+//  Copyright © 2026 StockX. All rights reserved.
 //
 
 import Foundation
 
 
-struct Page: Decodable, Equatable {
+public struct Page: Decodable, Equatable {
 
     /// The posts contained within the fetched page.
-    let posts: [Post]
+    public let posts: [Post]
 
 }
 
@@ -26,7 +25,7 @@ extension Page {
         case hits
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         posts = try container.decode([Post].self, forKey: .hits)
     }

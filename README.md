@@ -8,12 +8,14 @@ The goal is to create a basic iOS application that lists Hacker News front-page 
 
 Feel free to create the application whichever way you'd like. Feel free to use open source libraries.
 
-A simple networking implementation has been provided. Here's an example of fetching a list of posts on the home page.
+A simple networking implementation has been provided in the `NetworkKit` Swift package, which the project already depends on. Import it in any file that needs it. Here's an example of fetching a list of posts on the home page.
 
 ## Network Service Usage
 
 #### Using callbacks:
 ```swift
+import NetworkKit
+
 let service = NetworkService()
 
 service.execute(endpoint: .home) { result in
@@ -28,6 +30,8 @@ service.execute(endpoint: .home) { result in
 
 #### Using async/await:
 ```swift
+import NetworkKit
+
 let service = NetworkService()
 
 do {

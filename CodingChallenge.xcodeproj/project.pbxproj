@@ -3,27 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4223CF5525A8BC6200290217 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223CF4C25A8BC6200290217 /* Post.swift */; };
-		4223CF5625A8BC6200290217 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223CF4D25A8BC6200290217 /* NetworkError.swift */; };
-		4223CF5725A8BC6200290217 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223CF4E25A8BC6200290217 /* Page.swift */; };
-		4223CF5825A8BC6200290217 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223CF4F25A8BC6200290217 /* Endpoint.swift */; };
-		4223CF5A25A8BC6200290217 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4223CF5325A8BC6200290217 /* NetworkService.swift */; };
 		428A947325A8B984002E96A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A947225A8B984002E96A6 /* AppDelegate.swift */; };
 		428A947525A8B984002E96A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A947425A8B984002E96A6 /* SceneDelegate.swift */; };
 		428A947725A8B984002E96A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428A947625A8B984002E96A6 /* ViewController.swift */; };
 		428A947C25A8B985002E96A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428A947B25A8B985002E96A6 /* Assets.xcassets */; };
+		F6821B57307463E400EFA748 /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = F6821B56307463E400EFA748 /* NetworkKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4223CF4C25A8BC6200290217 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		4223CF4D25A8BC6200290217 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		4223CF4E25A8BC6200290217 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
-		4223CF4F25A8BC6200290217 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		4223CF5325A8BC6200290217 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		428A946F25A8B984002E96A6 /* CodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		428A947225A8B984002E96A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		428A947425A8B984002E96A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,40 +28,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6821B57307463E400EFA748 /* NetworkKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4223CF4A25A8BC6200290217 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				4223CF4B25A8BC6200290217 /* Models */,
-				4223CF5225A8BC6200290217 /* Service */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		4223CF4B25A8BC6200290217 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4223CF4D25A8BC6200290217 /* NetworkError.swift */,
-				4223CF4C25A8BC6200290217 /* Post.swift */,
-				4223CF4E25A8BC6200290217 /* Page.swift */,
-				4223CF4F25A8BC6200290217 /* Endpoint.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		4223CF5225A8BC6200290217 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				4223CF5325A8BC6200290217 /* NetworkService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		428A946625A8B984002E96A6 = {
 			isa = PBXGroup;
 			children = (
@@ -90,7 +54,6 @@
 		428A947125A8B984002E96A6 /* CodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				4223CF4A25A8BC6200290217 /* Network */,
 				428A947225A8B984002E96A6 /* AppDelegate.swift */,
 				428A947425A8B984002E96A6 /* SceneDelegate.swift */,
 				428A947625A8B984002E96A6 /* ViewController.swift */,
@@ -116,6 +79,9 @@
 			dependencies = (
 			);
 			name = CodingChallenge;
+			packageProductDependencies = (
+				F6821B56307463E400EFA748 /* NetworkKit */,
+			);
 			productName = CodingChallenge;
 			productReference = 428A946F25A8B984002E96A6 /* CodingChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +110,9 @@
 				Base,
 			);
 			mainGroup = 428A946625A8B984002E96A6;
+			packageReferences = (
+				F6821B55307463E400EFA748 /* XCLocalSwiftPackageReference "NetworkKit" */,
+			);
 			productRefGroup = 428A947025A8B984002E96A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -169,19 +138,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4223CF5825A8BC6200290217 /* Endpoint.swift in Sources */,
 				428A947725A8B984002E96A6 /* ViewController.swift in Sources */,
 				428A947325A8B984002E96A6 /* AppDelegate.swift in Sources */,
-				4223CF5725A8BC6200290217 /* Page.swift in Sources */,
 				428A947525A8B984002E96A6 /* SceneDelegate.swift in Sources */,
-				4223CF5525A8BC6200290217 /* Post.swift in Sources */,
-				4223CF5A25A8BC6200290217 /* NetworkService.swift in Sources */,
-				4223CF5625A8BC6200290217 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
 
 /* Begin XCBuildConfiguration section */
 		428A948125A8B985002E96A6 /* Debug */ = {
@@ -358,6 +321,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		F6821B55307463E400EFA748 /* XCLocalSwiftPackageReference "NetworkKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = NetworkKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F6821B56307463E400EFA748 /* NetworkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 428A946725A8B984002E96A6 /* Project object */;
 }

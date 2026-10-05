@@ -1,15 +1,14 @@
 //
 //  NetworkError.swift
-//  CodingChallenge
+//  NetworkKit
 //
-//  Created by Cody Robertson on 5/20/19.
-//  Copyright © 2019 Cody Robertson. All rights reserved.
+//  Copyright © 2026 StockX. All rights reserved.
 //
 
 import Foundation
 
 
-enum NetworkError: Error {
+public enum NetworkError: Error {
 
     /// The URL was invalid.
     case invalidURL
