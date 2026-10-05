@@ -44,3 +44,8 @@ do {
     print("There was an error: \(error)")
 }
 ```
+
+## Design Guidance
+
+<img width="444" alt="Top stories" src="https://github.com/user-attachments/assets/9c4cf02e-a3d3-4443-8a78-821813245871" />
+
