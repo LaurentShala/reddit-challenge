@@ -7,17 +7,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let network = NetworkService()
-
+    let service = NetworkService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        network.execute(endpoint: .home) { result in
-            let page: Page? = try? result.get()
-            print(page?.posts.first?.title)
+        
+        view.backgroundColor = .systemBackground
+        
+        service.execute(endpoint: .home) { result in
+            switch result {
+            case .success(let response):
+                print(response.posts)
+            case .failure:
+                print("error!!!!")
+            }
         }
     }
-
-
+    
 }
 
