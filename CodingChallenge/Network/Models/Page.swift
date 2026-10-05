@@ -1,6 +1,6 @@
 //
 //  Page.swift
-//  Reddit
+//  CodingChallenge
 //
 //  Created by Cody Robertson on 5/20/19.
 //  Copyright © 2019 Cody Robertson. All rights reserved.

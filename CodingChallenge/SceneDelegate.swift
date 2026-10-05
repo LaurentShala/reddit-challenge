@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Reddit
+//  CodingChallenge
 //
 
 import UIKit

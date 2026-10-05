@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Reddit
+//  CodingChallenge
 //
 
 import UIKit

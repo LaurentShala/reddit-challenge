@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Reddit
+//  CodingChallenge
 //
 
 import UIKit
